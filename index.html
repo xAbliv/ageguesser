@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Age Guesser</title>
+<style>
+html,
+body {
+  margin: 5%;
+  text-align: center;
+}
+
+div {
+  border: 3px solid black;
+  text-align: center;
+  margin: auto;
+}
+
+#go {
+  color: white;
+  background: black;
+  width: 60px;
+  border-radius: 25px;
+  margin: auto;
+}
+
+#results {
+  display: none;
+}
+</style>
+</head>
+  <body>
+  <section id="input">
+    <h2 id="heading">Age Guesser!</h2>
+      <div>
+        <p>Input your age:</p>
+          <form>
+            <input type="number" oninput="guessAge(this.value)" onchange="guessAge(this.value)" id="input">
+          </form>
+            <br>
+        <p id="go" onclick="showResults()">Guess!</p>
+            <br>
+      </div>
+      </section>
+      <section id="results">
+      <h2>Results:</h2>
+        <div>
+          <p>You are <i><span id="reveal">-</span></i> years old!</p>
+        </div>
+      </section>
+        <script>
+        function guessAge(input){
+          input = parseFloat(input);
+          document.getElementById("reveal").innerHTML = input;
+        }
+        function showResults(){
+          document.getElementById("input").style.display = "none";
+          document.getElementById("results").style.display = "block";
+        }
+        </script>
+</body>
+</html>
